@@ -1,27 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Proyecto Multimedia y Gamificación</title>
-
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- Tu CSS externo -->
+  <meta charset="utf-8">
+  <title>Contenido multimedia — Gamificación & Bases de Datos</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<!-- ================= HEADER ================= -->
 <header>
   <div class="container">
-    <h1>Actividad CSS + Multimedia + Gamificación</h1>
+    <h1>Contenido multimedia — Gamificación & Bases de Datos</h1>
     <nav>
       <ul>
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#video">Video</a></li>
-        <li><a href="#juego">Juego</a></li>
+        <li><a href="#gamificacion">Gamificación</a></li>
+        <li><a href="#bases">Bases de Datos</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -30,101 +26,95 @@
 
 <main class="container">
 
-  <!-- ================= HERO ================= -->
-  <section id="inicio" class="hero">
-    <div class="texto">
-      <h2>Bienvenidos</h2>
-      <p>
-        Este sitio cumple con los requisitos de las actividades de CSS3, integración de multimedia
-        y gamificación usando HTML, Flexbox y JavaScript.
-      </p>
+  <!-- INICIO -->
+  <section id="inicio">
+    <h2>Bienvenida</h2>
+
+<figure>
+  <iframe 
+    width="100%" 
+    height="315"
+    src="https://www.youtube.com/embed/6S8A-1jBD5Y"
+    title="Video explicativo"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+
+  <figcaption>Video explicativo sobre Bases de Datos</figcaption>
+</figure>
+
+
+
+    <p>
+      Bienvenido al sitio educativo sobre Gamificación y Bases de Datos.
+    </p>
+  </section>
+
+  <!-- GAMIFICACIÓN -->
+  <section id="gamificacion">
+    <h2>Gamificación — Juego del Ahorcado</h2>
+
+    <div class="card" id="hangman">
+      <h3 id="hangman-draw">😀</h3>
+      <p id="word">_ _ _ _ _</p>
+      <p>Intentos: <span id="tries">6</span></p>
+      <div id="letters"></div>
+      <p id="result"></p>
     </div>
+  </section>
+
+  <!-- BASES DE DATOS -->
+  <section id="bases">
+    <h2>Infografía de Bases de Datos</h2>
 
     <figure>
-      <img src="https://images.unsplash.com/photo-1581090700227-1e37b189bbf9" alt="Tecnología">
+      <img src="assets/Infografía base de datos.png" alt="Infografía de Bases de Datos">
+      <figcaption>El mundo de las Bases de Datos</figcaption>
     </figure>
   </section>
 
-  <!-- ================= VIDEO ================= -->
-  <section id="video">
-    <h2>Video Explicativo</h2>
-
-    <iframe 
-      src="https://www.youtube.com/embed/nc3_s8o8bNU"
-      frameborder="0"
-      allowfullscreen>
-    </iframe>
-  </section>
-
-  <!-- ================= JUEGO ================= -->
-  <section id="juego">
-    <h2>Juego del Ahorcado 🎮</h2>
-
-    <div class="gamification">
-
-      <div class="card">
-        <div id="hangman">
-          <img id="hangman-img" src="https://i.imgur.com/3lXyXQm.png" width="200">
-          <p id="word">_ _ _ _ _</p>
-          <p>Intentos restantes: <span id="tries">6</span></p>
-          <div id="letters"></div>
-          <p id="result"></p>
-          <button onclick="location.reload()">Reiniciar</button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================= CONTACTO ================= -->
+  <!-- CONTACTO -->
   <section id="contacto">
-    <h2>Formulario de Contacto</h2>
+    <h2>Contacto</h2>
 
-    <form>
-      <input type="text" placeholder="Nombre" required><br><br>
-      <input type="email" placeholder="Correo" required><br><br>
-      <textarea placeholder="Mensaje"></textarea><br><br>
+    <form onsubmit="event.preventDefault(); alert('Mensaje enviado');">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo" required>
+      <textarea placeholder="Mensaje"></textarea>
       <button type="submit">Enviar</button>
     </form>
   </section>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer>
   <div class="container">
-    <p>© 2025 - Proyecto Educativo</p>
-
+    <small>© 2025 — Sistema Educativo</small>
     <div class="socials">
       <a href="#">Facebook</a>
       <a href="#">Instagram</a>
-      <a href="#">WhatsApp</a>
+      <a href="#">Twitter</a>
     </div>
   </div>
 </footer>
 
-<!-- ================= JAVASCRIPT DEL AHORCADO ================= -->
+<!-- ======================
+     JUEGO DEL AHORCADO
+====================== -->
 <script>
   const words = ['tabla','query','datos','indice','clave'];
   const selected = words[Math.floor(Math.random()*words.length)];
   let display = Array(selected.length).fill('_');
   let tries = 6;
 
-  const images = [
-    "https://i.imgur.com/3lXyXQm.png",
-    "https://i.imgur.com/2g7Zb0E.png",
-    "https://i.imgur.com/uwB43sr.png",
-    "https://i.imgur.com/AfFp7pu.png",
-    "https://i.imgur.com/um0kCZO.png",
-    "https://i.imgur.com/t0bXKyx.png",
-    "https://i.imgur.com/0A6g8B4.png"
-  ];
+  const stages = ["😀","😐","😕","😟","😣","😖","💀"];
 
   const wordEl = document.getElementById('word');
   const triesEl = document.getElementById('tries');
   const lettersEl = document.getElementById('letters');
   const resultEl = document.getElementById('result');
-  const imgEl = document.getElementById('hangman-img');
+  const drawEl = document.getElementById('hangman-draw');
 
   wordEl.textContent = display.join(' ');
   triesEl.textContent = tries;
@@ -149,7 +139,7 @@
 
     if(!hit){
       tries--;
-      imgEl.src = images[tries];
+      drawEl.textContent = stages[6 - tries];
     }
 
     wordEl.textContent = display.join(' ');
