@@ -1,0 +1,135 @@
+:root{
+  --primary:#0b3c5d;
+  --secondary:#328cc1;
+  --accent:#f2b705;
+  --bg:#f4f6fb;
+  --card:#ffffff;
+  --text:#1f2933;
+  --muted:#6b7280;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+body{
+  font-family:'Poppins', sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  color:white;
+}
+
+header .container{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  padding:8px 14px;
+  border-radius:10px;
+  transition:.3s;
+}
+
+nav a:hover{
+  background:rgba(255,255,255,.2);
+}
+
+/* SECCIONES */
+section{
+  background:white;
+  padding:20px;
+  border-radius:16px;
+  margin-bottom:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+h2{ color:var(--primary); margin-bottom:12px; }
+
+figure img, iframe{
+  width:100%;
+  border-radius:12px;
+}
+
+/* JUEGO */
+#hangman{
+  text-align:center;
+}
+
+#hangman-draw{
+  font-size:4rem;
+  margin-bottom:10px;
+}
+
+#letters button{
+  margin:4px;
+  padding:10px 14px;
+  border-radius:8px;
+  border:none;
+  background:var(--secondary);
+  color:white;
+  cursor:pointer;
+}
+
+#letters button:disabled{
+  background:#ccc;
+}
+
+/* FORMULARIO */
+form input, form textarea{
+  width:100%;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  margin-bottom:10px;
+}
+
+form button{
+  background:var(--secondary);
+  color:white;
+  border:none;
+  padding:12px 18px;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  background:var(--primary);
+  color:white;
+}
+
+footer .container{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.socials a{
+  color:white;
+  margin-right:10px;
+  text-decoration:none;
+}
+
+/* RESPONSIVE */
+@media (max-width:480px){
+  nav ul{ flex-direction:column; text-align:center; }
+}
